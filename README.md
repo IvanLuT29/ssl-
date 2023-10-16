@@ -1,22 +1,14 @@
-Для отримання нового сертифіката для  нового деплойменту або сервісу через cert-manager в Kubernetes,  потрібно вказати у вашому ресурсі Ingress або CertificateRequest, що  новий сертифікат для  хосту або сервісу. Ось кроки для цього:
+To obtain a new certificate for a new deployment or service via cert-manager in Kubernetes, you need to specify in your Ingress or CertificateRequest resource that the new certificate is for a host or service. Here are the steps to do so:
 
-1. Додати Ingress або CertificateRequest
+1. Add Ingress or CertificateRequest
 
-    - Ви можете використовувати або Ingress або CertificateRequest, залежно від того, як  плануєте отримати сертифікат.
+    You can use either Ingress or CertificateRequest, depending on how you plan to obtain the certificate.
+    Ingress: If using Ingress for an application, simply add or update the Ingress resource and specify the new host that needs the certificate.
 
-    Ingress: Якщо  використовувати Ingress для  додатку,потрібно  просто додати або оновити Ingress ресурс і вказати новий хост, який потребує сертифікат.
+    For cert-manager, this would mean that it needs to take a certificate for the new host new-app.example.com.
 
+2. Start the certificate handler:
+    cert-manager will detect a new Ingress or CertificateRequest if configured correctly and try to request the certificate automatically. After successful issuance of the certificate, it will be saved in the prompted secretName. storage path : /etc/kubernetes/secrets/namespace_name/secret_name
 
-    Для cert-manager це означатиме, що потрібно взяти сертифікат для нового хосту `new-app.example.com`.
-
-    
-
-2. Запустити обробник сертифікату:
-
-    cert-manager виявить новий Ingress або CertificateRequest, якщо налаштувати його правильно, і спробує автоматично запитати сертифікат. Після вдалого видачі сертифікату, він буде збережений в підказаному `secretName`.
-    шлях зберігання : /etc/kubernetes/secrets/namespace_name/secret_name
-
-
-3.Тепер новий деплоймент або сервіс буде мати SSL/TLS захист за допомогою нового сертифікату, який було автоматично виготовлено через cert-manager.
-
-cert-manager слідкуватиме за строком дії сертифікатів та, за потреби, оновлюватиме їх або запитуватиме новий сертифікат.
+3. Now the new deployment or service will have SSL/TLS protection with  a new certificate that was automatically generated via cert-manager.
+cert-manager will monitor the validity period of certificates and, if necessary, update them or request a new certificate.
