@@ -1,5 +1,0 @@
-spec:
-  tls:
-  - hosts:
-    - test.example.com
-    secretName: test-secret

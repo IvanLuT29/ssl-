@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: your-image:latest
+      securityContext:
+        runAsUser: 1001  # Це може бути UID користувача або групи, якщо необхідно
+        runAsGroup: 1001
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: my-secret
+  securityContext:
+    fsGroup: 1001
