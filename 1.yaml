@@ -1,0 +1,6 @@
+spec:
+  containers:
+  - command:
+    - kube-apiserver
+    - --token-auth-file=/etc/ca-certificates/tokens.csv
+    # інші параметри kube-apiserver...
