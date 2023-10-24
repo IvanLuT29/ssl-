@@ -1,0 +1,59 @@
+# HELP mysql_global_status_aborted_connects The number of failed attempts to connect to the MySQL server
+# TYPE mysql_global_status_aborted_connects counter
+mysql_global_status_aborted_connects 42
+
+# HELP mysql_global_status_threads_connected The number of currently open connections.
+# TYPE mysql_global_status_threads_connected gauge
+mysql_global_status_threads_connected 37
+
+# HELP mysql_global_status_threads_running The number of threads that are currently running.
+# TYPE mysql_global_status_threads_running gauge
+mysql_global_status_threads_running 12
+
+# HELP mysql_global_status_slow_queries The number of queries that have taken longer than long_query_time to execute.
+# TYPE mysql_global_status_slow_queries gauge
+mysql_global_status_slow_queries 5
+
+# HELP mysql_global_status_max_used_connections The maximum number of connections that have been in use at the same time since the server started.
+# TYPE mysql_global_status_max_used_connections gauge
+mysql_global_status_max_used_connections 50
+
+# HELP mysql_global_status_qcache_hits The number of queries that have been retrieved from the query cache.
+# TYPE mysql_global_status_qcache_hits counter
+mysql_global_status_qcache_hits 1000
+
+# HELP mysql_global_status_key_read_requests The number of key read requests.
+# TYPE mysql_global_status_key_read_requests counter
+mysql_global_status_key_read_requests 500
+
+# HELP mysql_global_status_key_reads The number of actual key reads from disk.
+# TYPE mysql_global_status_key_reads counter
+mysql_global_status_key_reads 100
+
+# HELP mysql_global_status_com_select The number of SELECT statements executed on the server.
+# TYPE mysql_global_status_com_select counter
+mysql_global_status_com_select 2000
+
+# HELP mysql_global_status_com_insert The number of INSERT statements executed on the server.
+# TYPE mysql_global_status_com_insert counter
+mysql_global_status_com_insert 500
+
+# HELP mysql_global_status_com_update The number of UPDATE statements executed on the server.
+# TYPE mysql_global_status_com_update counter
+mysql_global_status_com_update 300
+
+# HELP mysql_global_status_com_delete The number of DELETE statements executed on the server.
+# TYPE mysql_global_status_com_delete counter
+mysql_global_status_com_delete 100
+
+# HELP mysql_global_status_innodb_buffer_pool_size The size of the InnoDB buffer pool that determines the amount of data stored in memory for faster access.
+# TYPE mysql_global_status_innodb_buffer_pool_size gauge
+mysql_global_status_innodb_buffer_pool_size 5368709120
+
+# HELP mysql_global_status_innodb_buffer_pool_pages_total The total number of pages available in the InnoDB buffer pool.
+# TYPE mysql_global_status_innodb_buffer_pool_pages_total gauge
+mysql_global_status_innodb_buffer_pool_pages_total 16384
+
+# HELP mysql_global_status_innodb_buffer_pool_pages_free The number of free pages in the InnoDB buffer pool.
+# TYPE mysql_global_status_innodb_buffer_pool_pages_free gauge
+mysql_global_status_innodb_buffer_pool_pages_free 4096
