@@ -1,29 +1,31 @@
-1. mysql_global_status_aborted_connects: Кількість неуспішних спроб підключення до сервера баз даних. 
 
-2. mysql_global_status_threads_connected: Кількість активних з'єднань до сервера баз даних.
+Показники моніторингу ЦП і пам'яті:
 
-3. mysql_global_status_threads_running: Кількість потоків, які в даний момент виконують запити до сервера баз даних.
+1. `cpu_usage_percentage`: Вимірює використання ЦП у відсотках, що вказує на завантаження процесора.-
+2. `memory_usage_bytes`: відстежує використання пам'яті в байтах, відображаючи використання оперативної пам'яті.
+3. `cpu_load_average`: відстежує середнє навантаження ЦП за визначений період часу.
+4. `memory_free_bytes`: вказує обсяг вільної пам’яті, доступної.
+5. `swap_usage_bytes`: вимірює використання пам’яті підкачки в байтах, надаючи уявлення про використання віртуальної пам’яті.
+Всі ці метрики є:  https://www.metricfire.com/blog/tips-for-monitoring-kubernetes-applications/
+Метрики моніторингу MySQL:
 
-4. mysql_global_status_slow_queries: Кількість запитів, які виконуються повільно та потребують більше часу для обробки, ніж дозволено за налаштуваннями long_query_time.
-
-5. mysql_global_status_max_used_connections: Максимальна кількість одночасних з'єднань, яка використовувалася з моменту запуску сервера баз даних.
-
-6. mysql_global_status_qcache_hits: Кількість запитів, які вдалося виконати за допомогою кешу запитів (query cache).
-
-7. mysql_global_status_key_read_requests: Кількість запитів на читання ключів в базі даних.
-
-8. mysql_global_status_key_reads: Кількість фактичних читань ключів з диску в базі даних.
-
-9. mysql_global_status_com_select: Кількість SQL-запитів SELECT, виконаних на сервері баз даних.
-
-10. mysql_global_status_com_insert: Кількість SQL-запитів INSERT, виконаних на сервері баз даних.
-
-11. mysql_global_status_com_update: Кількість SQL-запитів UPDATE, виконаних на сервері баз даних.
-
-12. mysql_global_status_com_delete: Кількість SQL-запитів DELETE, виконаних на сервері баз даних.
-
-13. mysql_global_status_innodb_buffer_pool_size: Розмір буфера кешу даних InnoDB, який визначає обсяг даних, які зберігаються в оперативній пам'яті для прискорення доступу до них.
-
-14. mysql_global_status_innodb_buffer_pool_pages_total: Загальна кількість сторінок, доступних в буфері кешу даних InnoDB.
-
-15. mysql_global_status_innodb_buffer_pool_pages_free: Кількість вільних сторінок в буфері кешу даних InnoDB.- оце в мене не працює.
+6. `mysql_up`: вказує, чи працює MySQL Exporter. https://sysdig.com/blog/mysql-monitoring/
+7. `mysql_error_count`: відстежує загальну кількість помилок, що виникли в MySQL. https://sysdig.com/blog/mysql-monitoring/
+8. `mysql_queries_executed_total`: підраховує загальну кількість запитів, виконаних у MySQL. https://sysdig.com/blog/mysql-monitoring/
+9. `mysql_slave_running`: вказує на стан реплікації MySQL   https://bobcares.com/blog/how-to-set-up-database-replication-in-mysql/
+10. `mysql_slow_queries_total`: Вимірює загальну кількість виконаних повільних запитів. https://medium.com/@MetricFire/tutorial-monitoring-mysql-server-performance-with-prometheus-and-sql-exporter-714925252632
+11. `mysql_connections_active`: відстежує поточну кількість активних підключень MySQL. https://dba.stackexchange.com/questions/270791/getting-current-number-of-connections-in-mysql
+12. `mysql_connections_total`: підраховує загальну кількість підключень MySQL. https://dba.stackexchange.com/questions/270791/getting-current-number-of-connections-in-mysql
+13. `mysql_innodb_data_reads_total`: вказує загальну кількість читань даних InnoDB. https://dev.mysql.com/doc/mysql-em-plugin/en/myoem-metric-innodb-ioactivity-category.html
+14. `mysql_innodb_data_writes_total`: Вимірює загальну кількість записів даних InnoDB. https://dev.mysql.com/doc/mysql-em-plugin/en/myoem-metric-innodb-ioactivity-category.html
+15. `mysql_table_locks_immediate`: негайне блокування таблиці, отримане в MySQL. https://dev.mysql.com/doc/refman/8.0/en/lock-tables.html
+16. `mysql_table_locks_waited`: кількість запитів на блокування таблиці, які повинні були чекати. https://docs.linuxfabrik.ch/monitoring-plugins/mysql-table-locks.html
+17. `mysql_users_connected`: поточна кількість підключених користувачів у MySQL 
+18. `mysql_users_queries_total`: сукупна кількість запитів, виконаних кожним користувачем.
+19. `mysql_innodb_row_ops_inserts_total`: Загальна кількість операцій вставки рядка InnoDB.
+20. `mysql_innodb_row_ops_updates_total`: Загальна кількість операцій оновлення рядка InnoDB.
+21. `mysql_query_execution_time_seconds`: відстежує час виконання запитів у секундах.
+22. `mysql_table_fragmentation_ratio`: Вимірює коефіцієнт фрагментації таблиць MySQL.
+23. `mysql_binlog_events_total`: вказує загальну кількість подій у двійковому журналі. https://dev.mysql.com/doc/refman/8.0/en/show-binlog-events.html
+24. `mysql_threads_cached`: відстежує кількість кешованих потоків у MySQL. https://habr.com/ru/articles/159085/
+25. `mysql_tmp_disk_tables_created_total`: підраховує загальну кількість створених тимчасових дискових таблиць. https://dba.stackexchange.com/questions/53201/mysql-creates-temporary-tables-on-disk-how-do-i-stop-it
