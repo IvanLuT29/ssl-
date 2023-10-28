@@ -7,6 +7,8 @@
 4. `memory_free_bytes`: вказує обсяг вільної пам’яті, доступної.
 5. `swap_usage_bytes`: вимірює використання пам’яті підкачки в байтах, надаючи уявлення про використання віртуальної пам’яті.
 Всі ці метрики є:  https://www.metricfire.com/blog/tips-for-monitoring-kubernetes-applications/
+
+
 Метрики моніторингу MySQL:
 
 6. `mysql_up`: вказує, чи працює MySQL Exporter. https://sysdig.com/blog/mysql-monitoring/
